@@ -4,9 +4,11 @@ dvc==2.1.0
 fastapi==0.63.0
 feast==0.10.5
 matplotlib==3.2.2
+mlflow==1.13.1
 nltk==3.2.5
 numpy==1.19.5
 numpyencoder==0.3.0
+optuna==2.4.0
 pandas==1.1.5
 pretty-errors==1.2.19
 rich==10.0.0
