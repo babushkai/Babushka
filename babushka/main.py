@@ -20,7 +20,7 @@ from orchestrator import dag1
 from babushka import data, models, predict, train, utils 
 
 # Ignore warning
-warnings.filterwarnings("ignore")
+#warnings.filterwarnings("ignore")
 
 # Typer CLI app
 app = typer.Typer()
