@@ -26,12 +26,12 @@ setup(name="dk",
     license = "MIT", 
     description = "test", 
     author = "Daisuke Kuwabara", 
-    packages=find_namespace_packages()
+    packages=find_namespace_packages(),
     install_requires = [required_packages],
     extras_require={
     "test": test_packages,
-    "dev": #test_packages + dev_packages + docs_packages,
-    "docs": #docs_packages,
+    #"dev": #test_packages + dev_packages + docs_packages,
+    #"docs": #docs_packages,
 },
     entry_points = {
         "console_scripts": [
