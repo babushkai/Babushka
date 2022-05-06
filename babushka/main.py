@@ -16,7 +16,7 @@ from feast import FeatureStore
 from numpyencoder import NumpyEncoder
 from optuna.integration.mlflow import MLflowCallback
 
-from orchestrator import dag1
+from orchestrator import mlflow
 from babushka import data, models, predict, train, utils 
 
 # Ignore warning
@@ -31,6 +31,7 @@ def download_auxiliary_data():
 
 @app.command()
 def trigger_orchestrator():
+    mlflow
     pass
 
 @app.command()
