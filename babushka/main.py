@@ -31,13 +31,10 @@ def download_auxiliary_data():
 
 @app.command()
 def trigger_orchestrator():
-    os.system("export ENV_NAME=test")
-    os.system("export REGION=us-central1")
-    os.system("export FILE=sample.py")
-    os.system("gcloud composer environments storage dags import \
-    --environment $ENV_NAME --location $REGION --source $FILE")
-
-    pass
+    os.system("gcloud beta composer environments storage dags import \
+    --environment example-environment \
+    --location us-central1 \
+    --source='mlflow.py'")
 
 @app.command()
 def compute_feature():
