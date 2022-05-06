@@ -1,6 +1,6 @@
 # Main operations with Command line interface (CLI).
 # CLI application
-
+import os
 import json
 import tempfile
 import warnings
@@ -31,7 +31,12 @@ def download_auxiliary_data():
 
 @app.command()
 def trigger_orchestrator():
-    mlflow
+    os.system("export ENV_NAME=test")
+    os.system("export REGION=us-central1")
+    os.system("export FILE=sample.py")
+    os.system("gcloud composer environments storage dags import \
+    --environment $ENV_NAME --location $REGION --source $FILE")
+
     pass
 
 @app.command()
