@@ -27,4 +27,4 @@ jobs:
         run: |
           python -m pip install -e ".[test]" --no-cache-dir
       - name: Execute tests
-        run: pytest tests/babushka --ignore tests/babushka/test_main.py --ignore tests/babushka/test_data.py
+        run: pytest tests --ignore tests/babushka/test_main.py --ignore tests/babushka/test_data.py
