@@ -9,7 +9,6 @@ from urllib.request import urlopen
 
 import numpy as np
 import pandas as pd
-import torch
 
 
 def load_json_from_url(url: str) -> Dict:
@@ -73,23 +72,20 @@ def set_seed(seed: int = 1234) -> None:
     # Set seeds
     np.random.seed(seed)
     random.seed(seed)
-    torch.manual_seed(seed)
-    torch.cuda.manual_seed(seed)
-    torch.cuda.manual_seed_all(seed)  # multi-GPU
 
 
-def set_device(cuda: bool) -> torch.device:
-    """Set the device for computation.
-    Args:
-        cuda (bool): Determine whether to use GPU or not (if available).
-    Returns:
-        Device that will be use for compute.
-    """
-    device = torch.device("cuda" if (torch.cuda.is_available() and cuda) else "cpu")
-    torch.set_default_tensor_type("torch.FloatTensor")
-    if device.type == "cuda":  # pragma: no cover, simple tensor type setting
-        torch.set_default_tensor_type("torch.cuda.FloatTensor")
-    return device
+# def set_device(cuda: bool) -> torch.device:
+#     """Set the device for computation.
+#     Args:
+#         cuda (bool): Determine whether to use GPU or not (if available).
+#     Returns:
+#         Device that will be use for compute.
+#     """
+#     device = torch.device("cuda" if (torch.cuda.is_available() and cuda) else "cpu")
+#     torch.set_default_tensor_type("torch.FloatTensor")
+#     if device.type == "cuda":  # pragma: no cover, simple tensor type setting
+#         torch.set_default_tensor_type("torch.cuda.FloatTensor")
+#     return device
 
 
 def dict_diff(d_a: Dict, d_b: Dict, d_a_name="a", d_b_name="b") -> Dict:

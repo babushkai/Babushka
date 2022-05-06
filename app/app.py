@@ -1,4 +1,4 @@
-import FastAPI, Request
+from fastapi import FastAPI, Request
 
 from functools import wraps
 from typing import Union, Dict, List, Type
@@ -36,14 +36,14 @@ def response():
     
     return wrap
 
-@response
+#@response
 def predict():
     pass
 
-@response
+#@response
 def _params():
     pass
 
-@response
+#@response
 def peformance():
     pass

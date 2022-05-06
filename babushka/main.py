@@ -12,19 +12,17 @@ from typing import Dict, Optional
 import mlflow
 import optuna
 import pandas as pd
-import tensorflow 
+#import tensorflow 
 import typer
 from feast import FeatureStore
 from numpyencoder import NumpyEncoder
 from optuna.integration.mlflow import MLflowCallback
 
-from config import config
-from config.config import logger
 from orchestrator import dag1
 from babushka import data, models, predict, train, utils 
 
 # Ignore warning
-warnings.fiterwarnings("ignore")
+warnings.filterwarnings("ignore")
 
 # Typer CLI app
 app = typer.Typer()
